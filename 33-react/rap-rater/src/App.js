@@ -67,11 +67,20 @@ class App extends Component {
     ]
   };
 
-  clickHandler = obj => {
+  clickHandler = (x,obj) => {
+    // debugger;
     const newArr = [...this.state.rapperList];
-    newArr.forEach(rapper => {
-      return rapper === obj ? rapper.rating++ : null;
-    });
+    if(x === 1){ 
+      newArr.forEach(rapper => {
+        return rapper === obj ? rapper.rating++ : null;
+      });
+      
+    } else {
+      newArr.forEach(rapper => {
+        if(rapper.rating > 0) return rapper === obj ? rapper.rating-- : null;
+        else return null;
+      });
+    }
     this.setState({
       rapperList: newArr
     });

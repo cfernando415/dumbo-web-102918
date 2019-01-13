@@ -21,8 +21,8 @@ const RapperCard = props => {
         className="rapperImage"
       />
       <h3>{props.rapper.rating}</h3>
-      <button onClick={() => props.clickHandler(props.rapper)}>Upvote</button>
-      <button>Downvote</button>
+      <button onClick={() => props.clickHandler(1, props.rapper)}>Upvote</button>
+      <button onClick={() => props.clickHandler(0, props.rapper)}>Downvote</button>
     </div>
   );
 };
